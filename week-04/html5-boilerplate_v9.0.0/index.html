@@ -4,18 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>myUconn Landing Page</title>
+  <title>myUconn-Landing-Page</title>
   <!-- bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <!-- my styles -->
   <link rel="stylesheet" href="css/style.css">
   
   <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -29,75 +24,101 @@
 <body>
 
 <!-- section 1 -->
-  <div class="container border">
+ <section id="hero">
+  <div class="container">
 
     <div class="row">
-      <div class="col-8 border">col 1<br>  <br>  <br>  <br>  <br>  
-      <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  </div>
+<!-- will be a col at the medium size with a 6 space(50%) -->
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div>
+        
+        <h1>Your Campus, <br> In Your Pocket</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque suscipit exercitationem tempore aperiam commodi illo</p>
+        <button type="button" class="btn btn-danger">Download Now</button> <button type="button" class="btn btn-secondary">Learn More</button>
 
-      <div class="col-4 border">col 2</div>
+        </div>
+      </div>
 
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="https://placehold.co/400x600" class="img-fluid" alt="placeholder"> 
+      </div>
     </div>
   </div>
+</section>
+
 <!-- section 2 -->
-<div class="container border">
+<section id="Cards">
+<div class="container">
   
       <div class="row">
-      <div class="col ">col 1 <br>  <br>  <br>  
-      <br>  </div>
-      </div>
+        <div class="col ">
+          <h1>Everything You Need</h1>
+          <p>From academics to athletics, myUConn brings your entire campus experince together in one beautiful app.</p>
+        </div>
 
-    <div class="row">
-      <div class="col ">col 1
-        <br>  <br>  <br>  <br>  
       </div>
-      <div class="col ">col 2</div>
-      <div class="col ">col 3</div>
-      <div class="col ">col 4</div>
+<!-- cards -->
+   <div class="row">
+    <div class="col-sm-3">
+
     </div>
-    <div class="row">
-      <div class="col ">col 1
-        <br>  <br>  <br>  <br>  
-      </div>
-      <div class="col ">col 2</div>
-      <div class="col ">col 3</div>
-      <div class="col ">col 4</div>
-    </div>
-</div>
+
+
+   </div>
+</section>
 <!-- section 3 -->
-  <div class="container border">
+ <section id="ThreeSquare">
+  <div class="container">
     
     <div class="row">
-      <div class="col border">col 1
+      <div class="col border">
+        <h1>25+</h1>
+        <p>App modules</p>
         <br>  <br>  <br>  <br>  
       </div>
 
-      <div class="col border">col 2</div>
+      <div class="col border">
+        <h1>24/7</h1>
+        <p>Live Bus Updates</p>
+      </div>
       
-      <div class="col border">col 3</div>
+      <div class="col border">
+        <h1>100%</h1>
+        <p>Uconn Offical</p>
+      </div>
     </div>
   </div>
+  </section>
   <!-- section 4 -->
+   <section id="GetStarted">
 <div class="container">
     <div class="row">
 
-      <div class="col border">col 1
-        <br>  <br>  <br>  <br>  <br>  <br>  <br>  
+      <div class="col ">
+        <h1>Ready to get started?</h1> 
+        <br> 
+        <p>download myUconn today and experince campus life like never before.</p>
+       <button type="button" class="btn btn-light">Download on the App store</button>
+       <button type="button" class="btn btn-light">Get it on Google Play</button>
       </div>
 
     </div>
   </div>
+  </section>
   <!-- section 5 -->
+   <section id="footer">
   <div class="container">
     <div class="row">
 
-      <div class="col border">col 1
-        <br>  <br>  <br>  
+      <div class="col">
+        <br> 
+        <p>2026 University of Connecticut. Go Huskies!</p>
+        <br> 
       </div>
 
     </div>
   </div>
-  
+  </section>
   
   
   <script src="js/app.js"></script>

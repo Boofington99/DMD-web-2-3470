@@ -85,6 +85,40 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+   #hero {
+    min-height: 100vh;
+    background-color: navy;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   #ThreeSquare{
+        background-color: red;
+        color: white;
+
+   }
+   #GetStarted {
+    background-color: navy;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+   }
+
+   #footer{
+    background: rgb(59, 59, 59);
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
