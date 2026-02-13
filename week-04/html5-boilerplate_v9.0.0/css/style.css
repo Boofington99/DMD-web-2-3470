@@ -87,25 +87,34 @@ textarea {
 
    #hero {
     min-height: 100vh;
-    background-color: navy;
+    background-color: #000F3A;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
    }
 
-   #ThreeSquare{
-        background-color: red;
+ 
+#Cards {
+  padding: 40px 0;
+  background-color:#eee;
+  display: flex;
+
+   }
+     #ThreeSquare{
+        background-color: #B3272D;
         color: white;
-
-   }
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+}
    #GetStarted {
-    background-color: navy;
+    background-color: #000F3A;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
    }
 
    #footer{
