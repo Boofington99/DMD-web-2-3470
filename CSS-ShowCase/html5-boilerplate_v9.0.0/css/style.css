@@ -87,12 +87,22 @@ textarea {
     :root{
         --bg-color: #0f172a;
         --font-color: #f1f5f9;
+        --section-bg: #1e293b;
+        --font-color: #f1f5f9;
+        --accent-color: #3b82f6;
+        --accent-secondary: #6366f1;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
     }
 
   .container {  display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-   gap: 10px 10px; 
+    gap: 10px 10px; 
     grid-auto-flow: row;
     grid-template-areas:
       "Header Header Header"
@@ -100,56 +110,71 @@ textarea {
       "Info-1 Info-1 Info-1"
       "Info-2 Info-2 IMG"
       "Wrap-Up Wrap-Up Wrap-Up"
+      "examples examples examples"
       "Footer Footer Footer";
   }
 
   .Header { grid-area: Header; 
       text-align: center;
         padding: 2rem 1rem;
-        background-color: var(--bg-color);
+        background-color: var(--section-bg);
         color: var(--font-color);
   }
 
   .Hero { grid-area: Hero; 
-
+    text-align: center;
+      color: var(--font-color);
   }
 
   .Info-1 { grid-area: Info-1; 
-
+      color: var(--font-color);
+          text-align: center;
   }
 
   .Info-2 { grid-area: Info-2; 
+      color: var(--font-color);
+      text-align: center;
 
   }
 
   .IMG { grid-area: IMG; 
-    
-  }
-  .Wrap-Up { grid-area: Wrap-Up; 
+      color: var(--font-color);
+      text-align: center;
 
   }
+  .Wrap-Up { grid-area: Wrap-Up; 
+      color: var(--font-color);
+      text-align: center;
+
+  }
+    .examples { grid-area: examples; 
+        color: var(--font-color);
+        text-align: center;
+    }
   .Footer { grid-area: Footer; 
         text-align: center;
         padding: 2rem 1rem;
+        color: var(--font-color);
   }
 
 /* Mobile First  */
 @media (max-width: 768px) {
-.container {
-  display: grid;
-  grid-template-columns: 1fr; /* single column */
-  grid-template-rows: auto;
-  gap: 2rem;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column */
+      grid-template-rows: auto;
+      gap: 1rem;
 
-  grid-template-areas:
-    "Header"
-    "Hero"
-    "Info-1"
-    "Info-2"
-    "IMG"
-    "Wrap-Up"
-    "Footer";
-}
+      grid-template-areas:
+        "Header"
+        "Hero"
+        "Info-1"
+        "Info-2"
+        "IMG"
+        "Wrap-Up"
+        "examples"
+        "Footer";
+    }
 }
 
 /* ==========================================================================
