@@ -30,36 +30,91 @@
 
   <!-- Add your site or application content here -->
   <div class="container">
-
+<!-- header/Title -->
     <div class="Header">
-      <h1>CSS-ShowCase</h1>
-      <h1>3D Tramsformations</h1>
-      <p>By Matthew Carrillo</p>
+      <h1 class="bounceIn">CSS-ShowCase <br> 3D Transformations</h1>
+      <h3>By Matthew Carrillo</h3>
     </div>
+<!-- hero -->
     <div class="Hero border">
       <h1>Hero example</h1>
     </div>
-    <div class="Info-1 border">
-      <p>Info 1</p>
+<!-- info 1 -->
+    <div class="Info-1">
+      <h2>What is CSS 3D Transformation?</h2>
+      <p>CSS 3D Transformations allow the creator of the site to manipulate elements in a three-dimensional space, providing depth and perspective to our web designs.
+         With CSS 3D transformations, you can rotate, scale, and translate elements along the X, Y, and Z axes, creating dynamic and visually appealing effects that can enhance the user experience on your website.
+      </p>
+      <h3>Why is it useful?</h3>
+      <p>
+        This can be useful for creating engaging user interfaces, interactive animations, and visually appealing effects that enhance the user experience.
+        Being able to engage users with interactive and visually appealing content can help to increase user engagement and retention on a website, 
+        and can allow more people to interact with the content on a deeper level.
+        Some places you might see 3D transformations used are in image galleries, product showcases, and interactive infographics.
+      </p>
     </div>
-    <div class="Info-2 border">
-      <p>Info 2</p>
+<!-- info 2 -->
+    <div class="Info-2">
+      <h3>How I created the transformations you see?</h3>
+      <p>
+        I was able to create the 3D transformations using CSS properties such as transform, perspective, and transform-style. 
+      </p>
+      <p>
+        I started with by creating a ID for the image I wanted to transform, I went with a simple tag "#rotate".
+      </p>
+      <p>
+        Then I used the transform property to apply the 3D transformation to the image. 
+        I used the rotateY function to rotate the image around the Y-axis, creating a spinning effect.
+      </p>
+      <p>
+        Using the Keyframe tag i created my own animation called "spin" that rotates the image from 0 degrees to 360 degrees, creating a full rotation.
+        starting from 0% at 0deg, then to 100% at 360deg. I set the animation to run for 5 seconds and to repeat infinitely, creating a continuous spinning effect!
+      </p>
+      <p>
+        Using such simple properties and functions I was able to create a visually appealing 3D transformation that is very simple and still very captivating.
+      </p>
     </div>
+<!-- img -->
     <div class="IMG border">
-      <p>Image here</p>
+      <h3>Look at him go!</h3>
+      <div class="show">
+        <img src="img/sonice-adventure-pose-fix.png" alt="placeholder-image" class="rotating" id="rotate"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="500"
+          data-aos-once="true">
+        <p>
+          Here is an exmaple of simple 3D rotation at 5s linear infinite. Linear inifite? 
+          whats that you ask? 
+        </p>
+        <p>
+          It means continuously scrolling marquee or in this case it will be the continuously spinning.
+          The image is using CSS keyframes for the rotation effect.
+          the photo will keep spinning at all times! 
+        </p>
+      </div>
     </div>
+<!-- wrap it up -->
     <div class="Wrap-Up border">
-      <p>Wrap-Up</p>
-       </div>
-     <div class="examples border">
+      <h3>Wrap-Up</h3>
+    </div>
+<!-- examples -->
+    <div class="examples border">
       <h3>Examples</h3>
     </div>
-    </div>
-     <div class="Footer border">
-      <h3>Resources used for creating this project:</h3>
+<!-- footer -->
+    <div class="Footer border">
+      <h3>Resources used for researching this project:</h3>
+      <ul class="square">
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform">MDN Web Docs: Using CSS Animations</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/perspective">MDN Web Docs: Using CSS Perspective</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform-style">MDN Web Docs: Using CSS Transform Style</a></li>
+        <li><a href="https://www.programiz.com/css/3d-transform">Programiz: CSS 3D Transform</a></li>
+        <li><a href="https://www.w3schools.com/css/css3_3dtransforms.asp">W3Schools: CSS 3D Transforms</a></li>
     </div>
 </div>
-
+<!-- java scripting -->
   <script src="js/app.js"   
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
   </script>

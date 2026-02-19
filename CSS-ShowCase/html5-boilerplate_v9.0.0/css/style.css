@@ -81,7 +81,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Author's custom styles meow
    ========================================================================== */
 
     :root{
@@ -91,17 +91,54 @@ textarea {
         --font-color: #f1f5f9;
         --accent-color: #3b82f6;
         --accent-secondary: #6366f1;
+        --animate-duration: 3s;
+        /* fonts */
     }
-
+    
+    /* body */
     body {
         background-color: var(--bg-color);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 
+          'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 
+          'Poppins', sans-serif, 
+          'inherit' sans-serif;
         margin: 0;
+        padding: 1rem;
     }
-
+    /* text edits */
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem;
+      text-align: center;
+      font-weight: bold;
+      padding-top: 1rem;
+    }
+    p{
+      font-family: 'inherit', sans-serif;
+      padding: 0.5rem;
+    }
+    ul.square {list-style-type: square;}
+    /* 3d transformations! */
+    #rotate {
+      padding: 0.5rem;
+    }   
+    /* the image rotation */
+    .rotating {
+      transform-style: preserve-3d;
+      animation: spin3d 5s linear infinite;
+    }
+    /* Keyframes for 3D rotation */
+    @keyframes spin3d {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
   .container {  display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
     gap: 10px 10px; 
     grid-auto-flow: row;
     grid-template-areas:
@@ -128,18 +165,23 @@ textarea {
 
   .Info-1 { grid-area: Info-1; 
       color: var(--font-color);
-          text-align: center;
+      text-align: center;
+      background-color: var(--section-bg);
+      padding: 1rem;
+
   }
 
   .Info-2 { grid-area: Info-2; 
       color: var(--font-color);
       text-align: center;
-
+      background-color: var(--section-bg);
+      padding: 1rem;
   }
 
   .IMG { grid-area: IMG; 
       color: var(--font-color);
       text-align: center;
+      padding: 1rem;
 
   }
   .Wrap-Up { grid-area: Wrap-Up; 
@@ -147,13 +189,13 @@ textarea {
       text-align: center;
 
   }
-    .examples { grid-area: examples; 
+  .examples { grid-area: examples; 
+        text-align: center;
+        padding: 1rem 0.5rem;
         color: var(--font-color);
-        text-align: center;
-    }
-  .Footer { grid-area: Footer; 
-        text-align: center;
-        padding: 2rem 1rem;
+  }
+  .Footer { grid-area: Footer;
+        padding: 1rem 0.5rem; 
         color: var(--font-color);
   }
 
@@ -169,13 +211,59 @@ textarea {
         "Header"
         "Hero"
         "Info-1"
-        "Info-2"
         "IMG"
+        "Info-2"
         "Wrap-Up"
         "examples"
         "Footer";
     }
 }
+
+/* ccs bounce aniamtion */
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  animation-duration: calc(var(--animate-duration) * 0.75);
+  animation-name: bounceIn;
+}
+
+
 
 /* ==========================================================================
    Helper classes
