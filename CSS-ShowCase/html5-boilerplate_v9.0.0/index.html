@@ -32,12 +32,8 @@
   <div class="container">
 <!-- header/Title -->
     <div class="Header">
-      <h1 class="bounceIn">CSS-ShowCase <br> 3D Transformations</h1>
+      <h1 class="rotating" id="rotate">CSS-ShowCase <br> 3D Transformations</h1>
       <h3>By Matthew Carrillo</h3>
-    </div>
-<!-- hero -->
-    <div class="Hero border">
-      <h1>Hero example</h1>
     </div>
 <!-- info 1 -->
     <div class="Info-1">
@@ -103,6 +99,45 @@
 <!-- examples -->
     <div class="examples border">
       <h3>Examples</h3>
+      <section class="showcase">
+
+  <div class="example">
+    <div class="box spinY"></div>
+    <div class="controls">
+      <button onclick="start('spinY')">Start</button>
+      <button onclick="pause('spinY')">Pause</button>
+    </div>
+    <p>3D Y Rotation</p>
+  </div>
+
+  <div class="example">
+    <div class="box flipX"></div>
+    <div class="controls">
+      <button onclick="start('flipX')">Start</button>
+      <button onclick="pause('flipX')">Pause</button>
+    </div>
+    <p>3D X Flip</p>
+  </div>
+
+  <div class="example">
+    <div class="box depthMove"></div>
+    <div class="controls">
+      <button onclick="start('depthMove')">Start</button>
+      <button onclick="pause('depthMove')">Pause</button>
+    </div>
+    <p>TranslateZ Depth</p>
+  </div>
+
+  <div class="example">
+    <div class="box combo"></div>
+    <div class="controls">
+      <button onclick="start('combo')">Start</button>
+      <button onclick="pause('combo')">Pause</button>
+    </div>
+    <p>3D Combo Spin</p>
+  </div>
+
+</section>
     </div>
 <!-- footer -->
     <div class="Footer border">
@@ -115,6 +150,18 @@
         <li><a href="https://www.w3schools.com/css/css3_3dtransforms.asp">W3Schools: CSS 3D Transforms</a></li>
     </div>
 </div>
+
+
+<!-- button controls -->
+    <script>
+      function start(className) {
+        document.querySelector("." + className).style.animationPlayState = "running";
+      }
+
+      function pause(className) {
+        document.querySelector("." + className).style.animationPlayState = "paused";
+      }
+    </script>
 <!-- java scripting -->
   <script src="js/app.js"   
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
@@ -124,6 +171,7 @@
       <script>
         AOS.init();
       </script>
+
 
 </body>
 

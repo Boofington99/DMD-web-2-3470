@@ -136,31 +136,29 @@ textarea {
         transform: rotateY(360deg);
       }
     }
-  .container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.25fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
-    gap: 10px 10px; 
-    grid-auto-flow: row;
-    grid-template-areas:
-      "Header Header Header"
-      "Hero Hero Hero"
-      "Info-1 Info-1 Info-1"
-      "Info-2 Info-2 IMG"
-      "Wrap-Up Wrap-Up Wrap-Up"
-      "examples examples examples"
-      "Footer Footer Footer";
-  }
+
+  .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:0.25fr 0.5fr 0.5fr 0.5fr 0.5fr 0.25fr;
+
+  gap: 10px;
+  grid-auto-flow: row;
+
+  grid-template-areas:
+    "Header Header Header"
+    "Info-1 Info-1 Info-1"
+    "Info-2 Info-2 IMG"
+    "examples examples examples"
+    "Wrap-Up Wrap-Up Wrap-Up"
+    "Footer Footer Footer";
+}
 
   .Header { grid-area: Header; 
       text-align: center;
         padding: 2rem 1rem;
         background-color: var(--section-bg);
         color: var(--font-color);
-  }
-
-  .Hero { grid-area: Hero; 
-    text-align: center;
-      color: var(--font-color);
   }
 
   .Info-1 { grid-area: Info-1; 
@@ -199,6 +197,101 @@ textarea {
         color: var(--font-color);
   }
 
+  /* examples CSS */
+  body {
+  margin: 0;
+  background: #111;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* FLEX CONTAINER */
+.showcase {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+/*  cards */
+.example {
+  text-align: center;
+  perspective: 800px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+/* shared card sizes  */
+.spinY,
+.flipX,
+.depthMove,
+.combo {
+  width: 220px;
+  height: 150px;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  border-radius: 12px;
+  transform-style: preserve-3d;
+  animation-play-state: paused;
+}
+
+/* -------- ANIMATIONS -------- */
+
+.spinY {
+  animation: rotateY 4s linear infinite;
+}
+.flipX {
+  animation: rotateX 3s ease-in-out infinite alternate;
+}
+.depthMove {
+  animation: depth 3s ease-in-out infinite alternate;
+}
+.combo {
+  animation: comboSpin 5s linear infinite;
+}
+
+/* keyframing */
+
+@keyframes rotateY {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes rotateX {
+  from { transform: rotateX(0deg); }
+  to { transform: rotateX(60deg); }
+}
+
+@keyframes depth {
+  from { transform: translateZ(0px); }
+  to { transform: translateZ(150px); }
+}
+
+@keyframes comboSpin {
+  from { transform: rotateY(0deg) rotateX(0deg); }
+  to { transform: rotateY(360deg) rotateX(360deg); }
+}
+
+/* button */
+.controls button {
+  padding: 6px 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* mobile examples */
+@media (max-width: 768px) {
+  .showcase {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Mobile First  */
 @media (max-width: 768px) {
     .container {
@@ -209,12 +302,11 @@ textarea {
 
       grid-template-areas:
         "Header"
-        "Hero"
         "Info-1"
         "IMG"
         "Info-2"
-        "Wrap-Up"
         "examples"
+        "Wrap-Up"
         "Footer";
     }
 }
@@ -229,29 +321,23 @@ textarea {
   to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-
   0% {
     opacity: 0;
     transform: scale3d(0.3, 0.3, 0.3);
   }
-
   20% {
     transform: scale3d(1.1, 1.1, 1.1);
   }
-
   40% {
     transform: scale3d(0.9, 0.9, 0.9);
   }
-
   60% {
     opacity: 1;
     transform: scale3d(1.03, 1.03, 1.03);
   }
-
   80% {
     transform: scale3d(0.97, 0.97, 0.97);
   }
-
   to {
     opacity: 1;
     transform: scale3d(1, 1, 1);
@@ -262,8 +348,6 @@ textarea {
   animation-duration: calc(var(--animate-duration) * 0.75);
   animation-name: bounceIn;
 }
-
-
 
 /* ==========================================================================
    Helper classes
