@@ -185,6 +185,10 @@ textarea {
   .Wrap-Up { grid-area: Wrap-Up; 
       color: var(--font-color);
       text-align: center;
+      background-color: var(--section-bg);
+      padding: 1rem;
+      color: var(--font-color)
+
 
   }
   .examples { grid-area: examples; 
