@@ -89,6 +89,7 @@ textarea {
         --font-color: #f1f5f9;
         --section-bg: #1e293b;
         --font-color: #f1f5f9;
+        --p-color:#E2E8F0;
         --accent-color: #3b82f6;
         --accent-secondary: #6366f1;
         --animate-duration: 3s;
@@ -97,7 +98,8 @@ textarea {
     
     /* body */
     body {
-        background-color: var(--bg-color);
+        background: #833AB4;
+        background: linear-gradient(180deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
         font-family: 
           'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 
           'Poppins', sans-serif, 
@@ -106,16 +108,26 @@ textarea {
         padding: 1rem;
     }
     /* text edits */
+    h1{
+      font-size: 5vw;
+    }
+    h2{
+      font-size: 3vw;
+    }
+  
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       padding: 0.5rem;
       text-align: center;
       font-weight: bold;
       padding-top: 1rem;
+      color: #F8FAFC;
     }
     p{
       font-family: 'inherit', sans-serif;
       padding: 0.5rem;
+      color: var(--p-color);
+
     }
     ul.square {list-style-type: square;}
     /* 3d transformations! */
@@ -142,7 +154,7 @@ textarea {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows:0.25fr 0.5fr 0.5fr 0.5fr 0.5fr 0.25fr;
 
-  gap: 10px;
+  gap: 1rem;
   grid-auto-flow: row;
 
   grid-template-areas:
@@ -162,7 +174,7 @@ textarea {
   }
 
   .Info-1 { grid-area: Info-1; 
-      color: var(--font-color);
+      color: var(--p-color);
       text-align: center;
       background-color: var(--section-bg);
       padding: 1rem;
@@ -170,44 +182,36 @@ textarea {
   }
 
   .Info-2 { grid-area: Info-2; 
-      color: var(--font-color);
+      color: var(--p-color);
       text-align: center;
       background-color: var(--section-bg);
       padding: 1rem;
   }
 
   .IMG { grid-area: IMG; 
-      color: var(--font-color);
+      color: var(--p-color);
       text-align: center;
       padding: 1rem;
-
   }
   .Wrap-Up { grid-area: Wrap-Up; 
-      color: var(--font-color);
+      color: var(--p-color);
       text-align: center;
       background-color: var(--section-bg);
       padding: 1rem;
-      color: var(--font-color)
-
 
   }
   .examples { grid-area: examples; 
         text-align: center;
         padding: 1rem 0.5rem;
-        color: var(--font-color);
+        color: var(--p-color);
+        /* background-color: var(--section-bg); */
   }
   .Footer { grid-area: Footer;
         padding: 1rem 0.5rem; 
-        color: var(--font-color);
+        color: var(--p-color);
+        background-color: var(--section-bg);
   }
 
-  /* examples CSS */
-  body {
-  margin: 0;
-  background: #111;
-  font-family: Arial, sans-serif;
-  color: white;
-}
 
 /* FLEX CONTAINER */
 .showcase {
