@@ -211,6 +211,8 @@ textarea {
         text-align: center;
         color: var(--p-color);
     background-color: var(--section-bg);
+    padding-left: 1rem;
+    padding-bottom: 1rem;
   }
   .Footer { grid-area: Footer;
         padding: 1rem 0.5rem; 
