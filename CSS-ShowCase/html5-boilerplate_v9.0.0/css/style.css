@@ -96,6 +96,7 @@ textarea {
         /* fonts */
     }
     
+    
     /* body */
     body {
         background: #833AB4;
@@ -114,6 +115,7 @@ textarea {
     h2{
       font-size: 3vw;
     }
+
   
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
@@ -122,6 +124,12 @@ textarea {
       font-weight: bold;
       padding-top: 1rem;
       color: #F8FAFC;
+    }
+      h2 {
+    color: #ffb347; 
+    }
+    h3 {
+    color: #a78bfa;
     }
     p{
       font-family: 'inherit', sans-serif;
