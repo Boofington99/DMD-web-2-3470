@@ -136,6 +136,11 @@ textarea {
       padding: 0.5rem;
       color: var(--p-color);
 
+    .highlight {
+  color: #60a5fa;
+  font-weight: 600;
+  }
+
     }
     ul.square {list-style-type: square;}
     /* 3d transformations! */
