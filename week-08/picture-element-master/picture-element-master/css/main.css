@@ -66,36 +66,72 @@
    STUDENT WORK AREA - MEDIA QUERIES
    ============================================ */
 
-/* TODO: Add media queries for Exercise 1 (Picture Element)
- * The picture element in the HTML will handle image switching,
- * but you may want to add responsive styles for the aside container.
- */
+/* Exercise 1 (Picture Element)
+   Optional responsive styling for the container */
 
-/* TODO: Add media queries for Exercise 2 (Background Images)
- * Example structure:
- * 
- * Mobile (default): bg-small.jpg
- * @media (min-width: 700px) {
- *   .bg-contain-demo, .bg-cover-demo {
- *     background-image: url('../images/bg-medium.jpg');
- *   }
- * }
- * 
- * @media (min-width: 1000px) {
- *   .bg-contain-demo, .bg-cover-demo {
- *     background-image: url('../images/bg-large.jpg');
- *   }
- * }
- */
+.picture-placeholder img {
+  width: 100%;
+  height: auto;
+}
 
-/* TODO: Set background-size for contain demo */
-/* .bg-contain-demo {
- *   background-size: contain;
- * }
- */
 
-/* TODO: Set background-size for cover demo */
-/* .bg-cover-demo {
- *   background-size: cover;
- * }
- */
+/* ============================================
+   Exercise 2 - Background Images
+   ============================================ */
+
+/* Default (mobile first) */
+.bg-contain-demo,
+.bg-cover-demo {
+  background-image: url('../images/bg-small.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Medium screens */
+@media (min-width: 700px) {
+  .bg-contain-demo,
+  .bg-cover-demo {
+    background-image: url('../images/bg-medium.jpg');
+  }
+}
+
+/* Large screens */
+@media (min-width: 1000px) {
+  .bg-contain-demo,
+  .bg-cover-demo {
+    background-image: url('../images/bg-large.jpg');
+  }
+}
+
+
+/* ============================================
+   Background Size Demonstrations
+   ============================================ */
+
+/* Contain: show whole image */
+.bg-contain-demo {
+  background-size: contain;
+}
+
+/* Cover: fill container */
+.bg-cover-demo {
+  background-size: cover;
+}
+
+/* ============================================
+   Exercise 3 - Image Set (High DPI Displays)
+   ============================================ */
+
+.image-set-demo {
+  height: 250px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-image: image-set(
+    url('../images/pattern-1x.jpg') 1x,
+    url('../images/pattern-2x.jpg') 2x,
+    url('../images/pattern-3x.jpg') 3x
+  );
+}
