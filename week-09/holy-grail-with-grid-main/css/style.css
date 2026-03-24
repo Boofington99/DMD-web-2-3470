@@ -1,18 +1,6 @@
 /* ============================================
    CSS GRID HOLY GRAIL LAYOUT ASSIGNMENT
-   ============================================
-   
-   REQUIREMENTS:
-   - Use CSS Grid to create the Holy Grail layout
-   - Mobile-first responsive design
-   - Single grid container (body element)
-   - Mobile stacking order: Header, Menu, Content, Ad, Footer
-   - Desktop layout: Header top, Menu left, Content center, Ad right, Footer bottom
-   - Use different background colors for each section
-   - Do NOT modify the HTML file
-   - Do NOT use height or min-height on grid rows
    ============================================ */
-
 
 /* ============================================
    RESET & BASE STYLES
@@ -28,60 +16,48 @@ p {
     margin-bottom: 1em;
 }
 
-/* TODO: Add any additional reset or base styles here */
-
-
 /* ============================================
    MOBILE-FIRST GRID LAYOUT (DEFAULT)
-   ============================================
-   
-   Set up the body as a grid container.
-   Create a single-column mobile layout.
-   Use grid-template-areas to define the stacking order:
-   Header, Menu, Content, Ad, Footer
    ============================================ */
 
 body {
-    /* TODO: Set display to grid */
-    
-    /* TODO: Define grid-template-columns for mobile (single column) */
-    
-    /* TODO: Define grid-template-areas for mobile stacking order */
-    
-    /* Optional: You can use height: 100vh on the container if desired */
-    
-    /* TODO: Set grid-template-rows (remember: no height or min-height values!) */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+
+    min-height: 100vh; /* makes layout fill screen */
+    grid-template-rows: auto 1fr auto; /* header | content | footer */
 }
 
-/* TODO: Assign each section to its grid area using grid-area property */
+/* Assign grid areas */
 
 header {
-    /* TODO: grid-area */
+    grid-area: header;
 }
 
 nav {
-    /* TODO: grid-area */
+    grid-area: nav;
 }
 
 main {
-    /* TODO: grid-area */
+    grid-area: main;
 }
 
 aside {
-    /* TODO: grid-area */
+    grid-area: aside;
 }
 
 footer {
-    /* TODO: grid-area */
+    grid-area: footer;
 }
-
 
 /* ============================================
    SECTION STYLING & BACKGROUND COLORS
-   ============================================
-   
-   Add different background colors to distinguish each section.
-   Add padding and other styling as needed.
    ============================================ */
 
 header {
@@ -101,14 +77,8 @@ nav a {
     text-decoration: none;
 }
 
-nav a:visited {
-    color: #ffffff;
-}
-
-nav a:hover {
-    color: #ffffff;
-}
-
+nav a:visited,
+nav a:hover,
 nav a:active {
     color: #ffffff;
 }
@@ -132,7 +102,6 @@ footer {
     text-align: center;
 }
 
-
 /* ============================================
    BUTTON STYLING
    ============================================ */
@@ -152,25 +121,17 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-
 /* ============================================
    RESPONSIVE DESIGN - DESKTOP LAYOUT
-   ============================================
-   
-   Use a media query for larger screens (e.g., min-width: 768px)
-   Reconfigure the grid for the classic Holy Grail layout:
-   - Header spans full width at top
-   - Menu (nav) in left sidebar
-   - Content (main) in center
-   - Ad (aside) in right sidebar
-   - Footer spans full width at bottom
    ============================================ */
 
-/* TODO: Add media query for desktop breakpoint */
-/* Example: @media (min-width: 768px) { ... } */
-
-    /* TODO: Redefine grid-template-columns for desktop (3 columns recommended) */
-    
-    /* TODO: Redefine grid-template-areas for desktop Holy Grail layout */
-    
-    /* TODO: Redefine grid-template-rows if needed */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header header"
+            "nav main aside"
+            "footer footer footer";
+    }
+}
