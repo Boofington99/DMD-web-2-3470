@@ -12,6 +12,9 @@
    ========================================================================== */
    /* root for styles and colors */
 :root {
+  /* FONT    */
+  --font-style: 'Poppins', sans-serif;
+
   /* Primary Gradients */
   --gradient-primary: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
   --gradient-secondary: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
@@ -35,7 +38,7 @@
   /* Border & Shadow */
   --border-light: #dfe6e9;
   --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);  
 }
 
 
@@ -45,6 +48,15 @@ html {
   line-height: 1.4;
 }
 
+body {
+  margin: 0;
+  font-family: var(--font-style);
+}
+
+.accent-text {
+  /* This tells the browser: "Go find the color saved in --accent-cyan" */
+  color: var(--accent-cyan);
+}
 
 /*
  * Remove text-shadow in selection highlight:
