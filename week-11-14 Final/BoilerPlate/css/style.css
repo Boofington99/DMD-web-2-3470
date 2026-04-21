@@ -1,221 +1,137 @@
-/*! HTML5 Boilerplate v9.0.0-RC1 | MIT License | https://html5boilerplate.com/ */
-
-/* ==========================================================================
-   Base styles
-   ========================================================================== */
-
-/* Root variables */
-:root {
-  /* FONT */
+:root{
+  --color-gradient: linear-gradient(to right, #a855f7, #6366f1);
+  --footer-gradient: linear-gradient(to right, #A348D7, #6366f1);
+  --color-accent: #79f8f8;
+  --color-background: #ffffff;
+  --color-text: #222222;
   --font-family-base: 'Poppins', sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.5;
+}
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
-  --gradient-secondary: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-  --color-gradient2: linear-gradient(to right, #a855f7, #6366f1);
-  --footer-gradient2: linear-gradient(to right, #A348D7, #6366f1);
-
-  /* Backgrounds */
-  --bg-light: #f8f9fa;
-  --bg-white: #ffffff;
-  --bg-footer: #7e57c2;
-
-  /* Text */
-  --text-main: #2d3436;
-  --text-muted: #636e72;
-  --text-heading: #1e272e;
-  --text-white: #ffffff;
-
-  /* Accent */
-  --accent-cyan: #00d2d3;
-  --accent-purple: #a29bfe;
-  --accent-pink: #fd79a8;
-
-  /* Borders & Shadows */
-  --border-light: #dfe6e9;
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+/* ================= BODY ================= */
+body{
+  font-family: var(--font-family-base);
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 html {
-  color: var(--text-main);
   font-size: 1em;
   line-height: 1.4;
 }
 
-body {
-  margin: 0;
-  font-family: var(--font-family-base); /* FIXED */
-  background-color: var(--bg-light);
+/* ================= NAV ================= */
+.Nav { 
+  grid-area: Nav;
+  background: var(--footer-gradient);
+  color: #fff;
+  padding: 20px;
+  font-size: 1.5em;
 }
 
-/* Accent text helper */
+nav a{
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover{
+  color: var(--color-accent);
+}
+
+/* ================= GRID LAYOUT (THIS WAS MISSING) ================= */
+.page-grid{
+  display: grid;
+  grid-template-areas:
+    "Nav Nav Nav"
+    "features features features"
+    "Work Manage Responsive"
+    "Tutorial Tutorial Tutorial"
+    "Plan Plan Plan"
+    "User-review User-review User-review"
+    "Footer Footer Footer";
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+/* ================= SECTIONS ================= */
+.features { grid-area: features; }
+
+.Work { grid-area: Work; }
+
+.Manage { grid-area: Manage; }
+
+.Responsive { grid-area: Responsive; }
+
+.Tutorial { 
+  grid-area: Tutorial;
+  background: var(--color-gradient);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.Plan { grid-area: Plan; }
+
+.User-review { 
+  grid-area: User-review;
+  padding: 20px;
+  text-align: center;
+}
+
+.Footer { 
+  grid-area: Footer;
+  background: var(--footer-gradient);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= HERO ================= */
+.container2 {
+  display: grid;
+  grid-template-areas:
+    "hero-text hero-img hero-img"
+    "hero-btn hero-img hero-img";
+  align-items: center;
+  gap: 20px;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  background-color: white;
+  color: #a54ef4;
+  border: none;
+  padding: 0.75em 2em;
+  font-weight: 600;
+  border-radius: 16px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/* ================= UTIL ================= */
 .accent-text {
-  color: var(--accent-cyan);
+  color: var(--color-accent);
 }
 
-/* Selection styling */
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/* ==========================================================================
-   Base Elements
-   ========================================================================== */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Helper Classes
-   ========================================================================== */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Add responsive styles here if needed */
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-  /* High resolution devices */
-}
-
-/* ==========================================================================
-   Print Styles
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+/* ================= BACK TO TOP ================= */
+#backToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  border: none;
+  background-color: #d3cece;
+  color: white;
+  cursor: pointer;
+  display: none;
 }
