@@ -1,89 +1,75 @@
 /*! HTML5 Boilerplate v9.0.0-RC1 | MIT License | https://html5boilerplate.com/ */
 
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Base styles
    ========================================================================== */
-   /* root for styles and colors */
+
+/* Root variables */
 :root {
-  /* FONT    */
+  /* FONT */
   --font-family-base: 'Poppins', sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.5;
 
-  /* Primary Gradients */
+  /* Gradients */
   --gradient-primary: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
   --gradient-secondary: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  --color-gradient2: linear-gradient(to right, #a855f7, #6366f1);
+  --footer-gradient2: linear-gradient(to right, #A348D7, #6366f1);
 
-  /* Background Colors */
-  --bg-light: #f8f9fa;       /* For section backgrounds like Features/Plans */
-  --bg-white: #ffffff;      /* For cards and main containers */
-  --bg-footer: #7e57c2;     /* The deep purple in the bottom section */
+  /* Backgrounds */
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --bg-footer: #7e57c2;
 
-  /* Text Colors */
-  --text-main: #2d3436;      /* Main body text (Dark Gray) */
-  --text-muted: #636e72;    /* Descriptions and subtitles (Medium Gray) */
-  --text-heading: #1e272e;  /* Section titles and bold headers (Near Black) */
-  --text-white: #ffffff;    /* Text on top of gradients */
-  
-  /* Brand/Accent Colors */
-  --accent-cyan: #00d2d3;   /* The bright blue/cyan highlight in "Lifestyle" */
-  --accent-purple: #a29bfe; /* Light purple accents/icons */
-  --accent-pink: #fd79a8;   /* Used in some icons or hover states */
+  /* Text */
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --text-heading: #1e272e;
+  --text-white: #ffffff;
 
-  /* Border & Shadow */
+  /* Accent */
+  --accent-cyan: #00d2d3;
+  --accent-purple: #a29bfe;
+  --accent-pink: #fd79a8;
+
+  /* Borders & Shadows */
   --border-light: #dfe6e9;
   --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);  
-  
-/* extra gradients */
-   --color-gradient2: linear-gradient(to right, #a855f7, #6366f1);
-    --footer-gradient2: linear-gradient(to right, #A348D7, #6366f1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-
 html {
-  color: #222;
+  color: var(--text-main);
   font-size: 1em;
   line-height: 1.4;
 }
 
 body {
   margin: 0;
-  font-family: var(--font-style);
+  font-family: var(--font-family-base); /* FIXED */
+  background-color: var(--bg-light);
 }
 
+/* Accent text helper */
 .accent-text {
-  /* This tells the browser: "Go find the color saved in --accent-cyan" */
   color: var(--accent-cyan);
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
+/* Selection styling */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
 
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
+/* ==========================================================================
+   Base Elements
+   ========================================================================== */
 
 hr {
   display: block;
@@ -94,12 +80,6 @@ hr {
   padding: 0;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
 audio,
 canvas,
 iframe,
@@ -109,49 +89,24 @@ video {
   vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
 textarea {
   resize: vertical;
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Helper Classes
    ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
 
 .hidden,
 [hidden] {
   display: none !important;
 }
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
 
 .visually-hidden {
   border: 0;
@@ -163,14 +118,7 @@ textarea {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-  /* 1 */
 }
-
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
 
 .visually-hidden.focusable:active,
 .visually-hidden.focusable:focus {
@@ -183,20 +131,9 @@ textarea {
   width: auto;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
 .invisible {
   visibility: hidden;
 }
-
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
 
 .clearfix::before,
 .clearfix::after {
@@ -209,26 +146,22 @@ textarea {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+  /* Add responsive styles here if needed */
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* High resolution devices */
 }
 
 /* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
+   Print Styles
    ========================================================================== */
 
 @media print {
@@ -237,7 +170,6 @@ textarea {
   *::after {
     background: #fff !important;
     color: #000 !important;
-    /* Black prints faster */
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -255,10 +187,6 @@ textarea {
     content: " (" attr(title) ")";
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
   a[href^="#"]::after,
   a[href^="javascript:"]::after {
     content: "";
@@ -291,4 +219,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
