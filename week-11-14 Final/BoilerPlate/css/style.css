@@ -13,7 +13,9 @@
    /* root for styles and colors */
 :root {
   /* FONT    */
-  --font-style: 'Poppins', sans-serif;
+  --font-family-base: 'Poppins', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
 
   /* Primary Gradients */
   --gradient-primary: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
@@ -39,6 +41,10 @@
   --border-light: #dfe6e9;
   --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);  
+  
+/* extra gradients */
+   --color-gradient2: linear-gradient(to right, #a855f7, #6366f1);
+    --footer-gradient2: linear-gradient(to right, #A348D7, #6366f1);
 }
 
 
