@@ -21,10 +21,15 @@ body{
   line-height: 1.6;
 }
 
+/* ================= NAV + HERO BACKGROUND MATCH ================= */
+.nav,
+#home {
+  background: var(--footer-gradient);
+  color: white;
+}
+
 /* ================= NAV ================= */
 .nav { 
-  background: var(--footer-gradient);
-  color: #fff;
   padding: 18px 50px;
 }
 
@@ -55,7 +60,7 @@ nav a:hover{
     "hero-btn hero-img";
   align-items: center;
   gap: 30px;
-  padding: 70px 60px;
+  padding: 90px 60px 70px;
 }
 
 .hero-text { 
@@ -65,11 +70,12 @@ nav a:hover{
 .hero-text h1{
   font-size: 2.6rem;
   margin-bottom: 18px;
+  color: white;
 }
 
 .hero-text p{
   margin-bottom: 16px;
-  color: #555;
+  color: #f1f1f1;
 }
 
 .hero-btn { 
@@ -88,17 +94,111 @@ nav a:hover{
 
 /* ================= SECTIONS ================= */
 section{
-  padding: 70px 60px;
+  padding: 80px 60px;
 }
 
-/* ================= USER REVIEWS IMAGE FIX ================= */
-/* 👇 THIS IS THE PART YOU ASKED FOR */
-#reviews img{
-  max-width: 300px;
+/* ================= FEATURES (NEW LAYOUT) ================= */
+.features{
+  text-align: center;
+}
+
+.features-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature-card{
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* ================= WORK SECTION ================= */
+.work-items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* ================= PRICING ================= */
+.pricing{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.pricing div{
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* ================= USER REVIEW (MATCH DESIGN) ================= */
+
+.reviews{
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.review-title{
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #1f2a66;
+}
+
+/* Card */
+.review-card{
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 40px 40px;
+  border: 2px solid #b56bff;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Avatar wrapper (this controls size!) */
+.review-avatar{
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #b56bff;
+  background: white;
+  overflow: hidden;
+}
+
+/* Image inside avatar */
+.review-avatar img{
   width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text */
+.review-text{
+  font-size: 1rem;
+  color: #2b3a67;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* Name */
+.review-name{
+  font-weight: 600;
+  color: #2b3a67;
 }
 
 /* ================= BUTTON ================= */
@@ -144,7 +244,7 @@ button:hover {
       "hero-img"
       "hero-btn";
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
   }
 
   section{
@@ -158,6 +258,12 @@ button:hover {
   .nav-container{
     flex-direction: column;
     gap: 10px;
+  }
+
+  .features-grid,
+  .work-items,
+  .pricing{
+    grid-template-columns: 1fr;
   }
 
   .hero-img img{
