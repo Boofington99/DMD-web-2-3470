@@ -25,19 +25,21 @@ body{
 .nav { 
   background: var(--footer-gradient);
   color: #fff;
-  padding: 20px 60px; /* MORE SPACE */
+  padding: 18px 50px;
 }
 
 .nav-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 nav a{
   color: #fff;
   text-decoration: none;
-  padding: 10px 15px; /* more breathing room */
+  padding: 8px 12px;
+  transition: 0.3s;
 }
 
 nav a:hover{
@@ -52,8 +54,8 @@ nav a:hover{
     "hero-text hero-img"
     "hero-btn hero-img";
   align-items: center;
-  gap: 40px; /* BIGGER GAP */
-  padding: 80px 80px; /* BIGGER SECTION SPACING */
+  gap: 30px;
+  padding: 70px 60px;
 }
 
 .hero-text { 
@@ -61,17 +63,18 @@ nav a:hover{
 }
 
 .hero-text h1{
-  font-size: 2.8rem;
-  margin-bottom: 20px;
+  font-size: 2.6rem;
+  margin-bottom: 18px;
 }
 
 .hero-text p{
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #555;
 }
 
 .hero-btn { 
   grid-area: hero-btn; 
+  margin-top: 10px;
 }
 
 .hero-img { 
@@ -80,48 +83,37 @@ nav a:hover{
 }
 
 .hero-img img{
-  max-width: 90%; /* not full width = nicer spacing */
+  max-width: 85%;
 }
 
 /* ================= SECTIONS ================= */
 section{
-  padding: 80px 80px; /* THIS FIXES “TOO CLOSE” */
+  padding: 70px 60px;
 }
 
-#features,
-#work,
-#plan,
-#reviews{
-  margin-top: 40px;
-}
-
-/* ================= GRID (OPTIONAL) ================= */
-.page-grid{
-  display: grid;
-  grid-template-areas:
-    "Nav Nav Nav"
-    "features features features"
-    "Work Manage Responsive"
-    "Tutorial Tutorial Tutorial"
-    "Plan Plan Plan"
-    "User-review User-review User-review"
-    "Footer Footer Footer";
-  gap: 40px; /* MORE SPACE */
-  padding: 40px;
+/* ================= USER REVIEWS IMAGE FIX ================= */
+/* 👇 THIS IS THE PART YOU ASKED FOR */
+#reviews img{
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
 /* ================= BUTTON ================= */
 button {
   background-color: white;
-  color: #a54ef4;
+  color: #6a3df4;
   border: none;
-  padding: 0.9em 2.2em;
+  padding: 0.85em 2em;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 18px;
   font-size: 1rem;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.12);
   transition: 0.3s;
-  margin-right: 10px; /* space between buttons */
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -134,7 +126,7 @@ button:hover {
   background: var(--footer-gradient);
   color: white;
   text-align: center;
-  padding: 50px;
+  padding: 50px 20px;
   margin-top: 60px;
 }
 
@@ -156,14 +148,19 @@ button:hover {
   }
 
   section{
-    padding: 40px 20px;
+    padding: 50px 20px;
   }
 
   .nav{
-    padding: 20px;
+    padding: 18px 20px;
   }
 
   .nav-container{
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-img img{
+    max-width: 100%;
   }
 }
