@@ -5,43 +5,97 @@
   --color-background: #ffffff;
   --color-text: #222222;
   --font-family-base: 'Poppins', sans-serif;
-  --font-size-base: 16px;
-  --line-height-base: 1.5;
 }
 
-/* ================= BODY ================= */
+/* ================= BASE ================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   font-family: var(--font-family-base);
-  margin: 0;
   background: var(--color-background);
   color: var(--color-text);
-}
-
-html {
-  font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 /* ================= NAV ================= */
-.Nav { 
-  grid-area: Nav;
+.nav { 
   background: var(--footer-gradient);
   color: #fff;
-  padding: 20px;
-  font-size: 1.5em;
+  padding: 20px 60px; /* MORE SPACE */
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav a{
   color: #fff;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 15px; /* more breathing room */
 }
 
 nav a:hover{
   color: var(--color-accent);
 }
 
-/* ================= GRID LAYOUT (THIS WAS MISSING) ================= */
+/* ================= HERO ================= */
+.container2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "hero-text hero-img"
+    "hero-btn hero-img";
+  align-items: center;
+  gap: 40px; /* BIGGER GAP */
+  padding: 80px 80px; /* BIGGER SECTION SPACING */
+}
+
+.hero-text { 
+  grid-area: hero-text; 
+}
+
+.hero-text h1{
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p{
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.hero-btn { 
+  grid-area: hero-btn; 
+}
+
+.hero-img { 
+  grid-area: hero-img;
+  text-align: center;
+}
+
+.hero-img img{
+  max-width: 90%; /* not full width = nicer spacing */
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding: 80px 80px; /* THIS FIXES “TOO CLOSE” */
+}
+
+#features,
+#work,
+#plan,
+#reviews{
+  margin-top: 40px;
+}
+
+/* ================= GRID (OPTIONAL) ================= */
 .page-grid{
   display: grid;
   grid-template-areas:
@@ -52,69 +106,36 @@ nav a:hover{
     "Plan Plan Plan"
     "User-review User-review User-review"
     "Footer Footer Footer";
-  grid-gap: 20px;
-  padding: 20px;
+  gap: 40px; /* MORE SPACE */
+  padding: 40px;
 }
 
-/* ================= SECTIONS ================= */
-.features { grid-area: features; }
-
-.Work { grid-area: Work; }
-
-.Manage { grid-area: Manage; }
-
-.Responsive { grid-area: Responsive; }
-
-.Tutorial { 
-  grid-area: Tutorial;
-  background: var(--color-gradient);
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-.Plan { grid-area: Plan; }
-
-.User-review { 
-  grid-area: User-review;
-  padding: 20px;
-  text-align: center;
-}
-
-.Footer { 
-  grid-area: Footer;
-  background: var(--footer-gradient);
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-/* ================= HERO ================= */
-.container2 {
-  display: grid;
-  grid-template-areas:
-    "hero-text hero-img hero-img"
-    "hero-btn hero-img hero-img";
-  align-items: center;
-  gap: 20px;
-}
-
-/* ================= BUTTONS ================= */
+/* ================= BUTTON ================= */
 button {
   background-color: white;
   color: #a54ef4;
   border: none;
-  padding: 0.75em 2em;
+  padding: 0.9em 2.2em;
   font-weight: 600;
-  border-radius: 16px;
+  border-radius: 20px;
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
   transition: 0.3s;
+  margin-right: 10px; /* space between buttons */
 }
 
 button:hover {
-  background-color: transparent;
+  background: var(--color-gradient);
   color: white;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background: var(--footer-gradient);
+  color: white;
+  text-align: center;
+  padding: 50px;
+  margin-top: 60px;
 }
 
 /* ================= UTIL ================= */
@@ -122,16 +143,27 @@ button:hover {
   color: var(--color-accent);
 }
 
-/* ================= BACK TO TOP ================= */
-#backToTopBtn {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  width: 56px;
-  height: 56px;
-  border: none;
-  background-color: #d3cece;
-  color: white;
-  cursor: pointer;
-  display: none;
+/* ================= MOBILE ================= */
+@media (max-width: 768px){
+  .container2{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero-text"
+      "hero-img"
+      "hero-btn";
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  section{
+    padding: 40px 20px;
+  }
+
+  .nav{
+    padding: 20px;
+  }
+
+  .nav-container{
+    flex-direction: column;
+  }
 }
