@@ -8,6 +8,10 @@
   --secondary-color: #6989fd;
   --font-family-base: 'Poppins', sans-serif;
 }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 /* ================= MOBILE NAV OVERLAY (FIXED) ================= */
 
