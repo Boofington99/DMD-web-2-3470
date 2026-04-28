@@ -17,7 +17,6 @@
 }
 
 html, body{
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -271,5 +270,71 @@ section{
 
   .flex-container{
     flex-direction: column;
+  }
+}
+/* ================= MOBILE FIRST FIX (TOP-DOWN FLOW) ================= */
+@media (max-width: 768px){
+
+  /* Force everything to stack */
+  section{
+    padding: 50px 20px;
+  }
+
+  /* HERO becomes fully vertical */
+  .container2{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero-text"
+      "hero-img"
+      "hero-btn";
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero-text h1{
+    font-size: 2rem;
+  }
+
+  .hero-img img{
+    max-width: 100%;
+  }
+
+  /* NAV stacks vertically */
+  .nav-container{
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav a{
+    display: block;
+    padding: 10px 0;
+  }
+
+  /* FEATURES stack */
+  .features-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* HOW IT WORKS stack */
+  .work-items{
+    grid-template-columns: 1fr;
+  }
+
+  /* PRICING stack */
+  .pricing{
+    grid-template-columns: 1fr;
+  }
+
+  /* MANAGE section stacks */
+  .flex-container{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Buttons full width optional feel */
+  button{
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
