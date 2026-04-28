@@ -34,10 +34,10 @@
   </header>
 
   <!-- ================= HERO ================= -->
-  <section id="home" class="container2">
+  <section id="home" class="container2 hero">
 
     <div class="hero-text">
-      <p>Jupiter X Lite</p>
+      <p class="tagline">Jupiter X Lite</p>
 
       <h1>
         Awesome App For<br>
@@ -49,8 +49,8 @@
       </p>
 
       <div class="hero-btn">
-        <button>Get Started</button>
-        <button>Learn More</button>
+        <button class="primary-btn">Get Started</button>
+        <button class="secondary-btn">Learn More</button>
       </div>
     </div>
 
@@ -61,65 +61,124 @@
   </section>
 
   <!-- ================= FEATURES ================= -->
-  <section id="features">
+  <section id="features" class="features-section">
     <h2>Awesome App Features</h2>
-    <p>Describe your app features here.</p>
+    <p class="section-subtitle">Describe your app features here.</p>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <h3>Fast Performance</h3>
+        <p>Your app runs smoothly and quickly.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Easy to Use</h3>
+        <p>Simple interface for everyone.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Secure</h3>
+        <p>Your data is always protected.</p>
+      </div>
+
+    </div>
   </section>
 
   <!-- ================= HOW IT WORKS ================= -->
-  <section id="work">
+  <section id="work" class="work-section">
     <h2>How Does This App Work?</h2>
 
-    <div>
-      <h3>Make a Profile</h3>
-      <p>Create your account quickly.</p>
+    <div class="steps">
 
-      <h3>Download App</h3>
-      <p>Install and start using instantly.</p>
+      <div class="step">
+        <h3>Make a Profile</h3>
+        <p>Create your account quickly.</p>
+      </div>
 
-      <h3>Enjoy Features</h3>
-      <p>Use all tools easily.</p>
+      <div class="step">
+        <h3>Download App</h3>
+        <p>Install and start using instantly.</p>
+      </div>
+
+      <div class="step">
+        <h3>Enjoy Features</h3>
+        <p>Use all tools easily.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EXTRA SECTION (from new design) ================= -->
+  <section class="manage-section">
+    <div class="flex-container">
+
+      <div>
+        <h2>Easy to Manage Your Data</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <button class="read-btn">Read More</button>
+      </div>
+
+      <img src="img/hero-img.png" alt="Manage Image">
+
     </div>
   </section>
 
   <!-- ================= PRICING ================= -->
-  <section id="plan">
+  <section id="plan" class="pricing-section">
     <h2>Choose Your Plan</h2>
 
-    <div>
-      <p>Starter - Free</p>
-      <p>Premium - $2/month</p>
-      <p>Pro - $7/month</p>
+    <div class="pricing-cards">
+
+      <div class="pricing-card">
+        <p class="plan-name">Starter</p>
+        <p class="plan-price">Free</p>
+      </div>
+
+      <div class="pricing-card">
+        <p class="plan-name">Premium</p>
+        <p class="plan-price">$2/month</p>
+      </div>
+
+      <div class="pricing-card">
+        <p class="plan-name">Pro</p>
+        <p class="plan-price">$7/month</p>
+      </div>
+
     </div>
   </section>
 
- <!-- ================= REVIEWS ================= -->
-<section id="reviews" class="reviews">
+  <!-- ================= REVIEWS ================= -->
+  <section id="reviews" class="reviews">
 
-  <h2 class="review-title">User Review</h2>
+    <h2 class="review-title">User Review</h2>
 
-  <div class="review-card">
+    <div class="review-card">
 
-    <div class="review-avatar">
-      <img src="img/review-img.png" alt="User Avatar">
+      <div class="review-avatar">
+        <img src="img/review-img.png" alt="User Avatar">
+      </div>
+
+      <p class="review-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <p class="review-name">– Michel Strac</p>
+
     </div>
 
-    <p class="review-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.
-    </p>
-
-    <p class="review-name">– Michel Strac</p>
-
-  </div>
-
-</section>
+  </section>
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <h3>Let’s Start Using Today</h3>
-
     <p>© 2026 My App. All rights reserved.</p>
   </footer>
+
+  <!-- SCROLL BUTTON -->
+  <button id="backToTopBtn">^</button>
 
 </body>
 

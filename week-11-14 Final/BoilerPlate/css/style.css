@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 body{
   font-family: var(--font-family-base);
   background: var(--color-background);
@@ -21,7 +25,7 @@ body{
   line-height: 1.6;
 }
 
-/* ================= NAV + HERO BACKGROUND MATCH ================= */
+/* ================= NAV + HERO BACKGROUND ================= */
 .nav,
 #home {
   background: var(--footer-gradient);
@@ -29,7 +33,7 @@ body{
 }
 
 /* ================= NAV ================= */
-.nav { 
+.nav {
   padding: 18px 50px;
 }
 
@@ -63,8 +67,8 @@ nav a:hover{
   padding: 90px 60px 70px;
 }
 
-.hero-text { 
-  grid-area: hero-text; 
+.hero-text {
+  grid-area: hero-text;
 }
 
 .hero-text h1{
@@ -78,130 +82,23 @@ nav a:hover{
   color: #f1f1f1;
 }
 
-.hero-btn { 
-  grid-area: hero-btn; 
+.hero-btn {
+  grid-area: hero-btn;
   margin-top: 10px;
 }
 
-.hero-img { 
+.hero-img {
   grid-area: hero-img;
   text-align: center;
 }
 
 .hero-img img{
   max-width: 85%;
-}
-
-/* ================= SECTIONS ================= */
-section{
-  padding: 80px 60px;
-}
-
-/* ================= FEATURES (NEW LAYOUT) ================= */
-.features{
-  text-align: center;
-}
-
-.features-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.feature-card{
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-/* ================= WORK SECTION ================= */
-.work-items{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 30px;
-  text-align: center;
-}
-
-/* ================= PRICING ================= */
-.pricing{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.pricing div{
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-/* ================= USER REVIEW (MATCH DESIGN) ================= */
-
-.reviews{
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.review-title{
-  font-size: 2.5rem;
-  margin-bottom: 60px;
-  color: #1f2a66;
-}
-
-/* Card */
-.review-card{
-  position: relative;
-  max-width: 800px;
+  display: block;
   margin: 0 auto;
-  padding: 80px 40px 40px;
-  border: 2px solid #b56bff;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* Avatar wrapper (this controls size!) */
-.review-avatar{
-  position: absolute;
-  top: -45px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 3px solid #b56bff;
-  background: white;
-  overflow: hidden;
-}
-
-/* Image inside avatar */
-.review-avatar img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Text */
-.review-text{
-  font-size: 1rem;
-  color: #2b3a67;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-
-/* Name */
-.review-name{
-  font-weight: 600;
-  color: #2b3a67;
-}
-
-/* ================= BUTTON ================= */
+/* ================= BUTTONS ================= */
 button {
   background-color: white;
   color: #6a3df4;
@@ -221,6 +118,152 @@ button:hover {
   color: white;
 }
 
+/* Optional button variants */
+.primary-btn{
+  background: white;
+  color: #6a3df4;
+}
+
+.secondary-btn{
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary-btn:hover{
+  background: white;
+  color: #6a3df4;
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding: 80px 60px;
+}
+
+/* ================= FEATURES ================= */
+.features{
+  text-align: center;
+}
+
+.features h2{
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.features p{
+  color: #666;
+}
+
+.features-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature-card{
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.feature-card:hover{
+  transform: translateY(-5px);
+}
+
+/* ================= HOW IT WORKS ================= */
+.work-items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.work-items div{
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* ================= PRICING ================= */
+.pricing{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.pricing div{
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.pricing div:hover{
+  transform: translateY(-6px);
+}
+
+/* ================= USER REVIEW ================= */
+.reviews{
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.review-title{
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #1f2a66;
+}
+
+.review-card{
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 40px 40px;
+  border: 2px solid #b56bff;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.review-avatar{
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #b56bff;
+  background: white;
+  overflow: hidden;
+}
+
+.review-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-text{
+  font-size: 1rem;
+  color: #2b3a67;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.review-name{
+  font-weight: 600;
+  color: #2b3a67;
+}
+
 /* ================= FOOTER ================= */
 .footer{
   background: var(--footer-gradient);
@@ -237,6 +280,7 @@ button:hover {
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px){
+
   .container2{
     grid-template-columns: 1fr;
     grid-template-areas:
