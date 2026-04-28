@@ -28,7 +28,7 @@ body{
   line-height: 1.6;
 }
 
-/* ================= NAV + HERO ================= */
+/* ================= NAV ================= */
 .nav,
 #home{
   background: var(--footer-gradient);
@@ -69,10 +69,6 @@ nav a:hover{
   padding: 90px 60px 70px;
 }
 
-.hero-text{
-  grid-area: hero-text;
-}
-
 .hero-text h1{
   font-size: 2.6rem;
   margin-bottom: 18px;
@@ -82,10 +78,6 @@ nav a:hover{
 .hero-text p{
   color: #f1f1f1;
   margin-bottom: 16px;
-}
-
-.hero-btn{
-  grid-area: hero-btn;
 }
 
 /* ================= BUTTONS ================= */
@@ -113,9 +105,18 @@ section{
   padding: 80px 60px;
 }
 
-/* ================= FEATURES ================= */
-.features{
+/* ================= FEATURES (FIXED FOR YOUR HTML) ================= */
+.features-section{
   text-align: center;
+}
+
+.features-section h2{
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle{
+  color: #666;
 }
 
 .features-grid{
@@ -137,25 +138,28 @@ section{
   transform: translateY(-5px);
 }
 
-/* ================= WORK ================= */
-.work-items{
+/* ================= HOW IT WORKS (FIXED) ================= */
+.work-section h2{
+  text-align: center;
+}
+
+.steps{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  text-align: center;
   margin-top: 30px;
 }
 
-.work-items div{
+.step{
   background: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
 }
 
-/* ================= MANAGE + RESPONSIVE (old sections restored) ================= */
-.manage-section,
-.responsive-section{
+/* ================= MANAGE SECTION ================= */
+.manage-section{
   padding: 80px 60px;
 }
 
@@ -166,33 +170,19 @@ section{
   gap: 40px;
 }
 
-.read-btn{
-  background: var(--primary-color);
-  color: white;
-}
-
-/* ================= TUTORIAL ================= */
-.tutorial{
-  position: relative;
+/* ================= PRICING (FIXED) ================= */
+.pricing-section{
   text-align: center;
-  padding: 120px 20px;
-  background-size: cover;
-  background-position: center;
-  color: white;
 }
 
-.tutorial h1{
-  font-size: 3rem;
-}
-
-/* ================= PRICING ================= */
-.pricing{
+.pricing-cards{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  margin-top: 30px;
 }
 
-.pricing div{
+.pricing-card{
   background: white;
   padding: 30px;
   border-radius: 12px;
@@ -201,13 +191,18 @@ section{
   transition: 0.3s;
 }
 
-.pricing div:hover{
+.pricing-card:hover{
   transform: translateY(-6px);
 }
 
 /* ================= REVIEW ================= */
 .reviews{
   text-align: center;
+}
+
+.review-title{
+  font-size: 2.5rem;
+  margin-bottom: 40px;
 }
 
 .review-card{
@@ -221,18 +216,6 @@ section{
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.review-avatar{
-  position: absolute;
-  top: -45px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #b56bff;
-}
-
 /* ================= FOOTER ================= */
 .footer{
   background: var(--footer-gradient);
@@ -241,13 +224,8 @@ section{
   padding: 50px 20px;
 }
 
-/* ================= UTIL ================= */
-.accent-text{
-  color: var(--color-accent);
-}
-
-/* ================= SCROLL BUTTON ================= */
-.scroll-to-top{
+/* ================= SCROLL BUTTON FIX ================= */
+#backToTopBtn{
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -263,12 +241,12 @@ section{
   transition: 0.3s;
 }
 
-.scroll-to-top.show{
+#backToTopBtn.show{
   opacity: 1;
   visibility: visible;
 }
 
-.scroll-to-top:hover{
+#backToTopBtn:hover{
   transform: scale(1.1);
 }
 
@@ -285,13 +263,13 @@ section{
     padding: 50px 20px;
   }
 
-  .flex-container{
-    flex-direction: column;
+  .features-grid,
+  .steps,
+  .pricing-cards{
+    grid-template-columns: 1fr;
   }
 
-  .features-grid,
-  .work-items,
-  .pricing{
-    grid-template-columns: 1fr;
+  .flex-container{
+    flex-direction: column;
   }
 }
