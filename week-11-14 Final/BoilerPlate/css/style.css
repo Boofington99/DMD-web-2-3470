@@ -9,6 +9,54 @@
   --font-family-base: 'Poppins', sans-serif;
 }
 
+/* ================= MOBILE NAV OVERLAY (FIXED) ================= */
+
+.menu-toggle{
+  display: none;
+}
+
+@media (max-width: 768px){
+
+  .menu-toggle{
+    display: block;
+    z-index: 1100;
+  }
+
+  #navMenu{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: var(--footer-gradient);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-left: 40px;
+    gap: 25px;
+
+    transform: translateY(-100%);
+    transition: 0.4s ease-in-out;
+
+    z-index: 1000;
+  }
+
+  #navMenu.show{
+    transform: translateY(0);
+  }
+
+  #navMenu a{
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
 /* ================= BASE ================= */
 *{
   margin: 0;
@@ -25,6 +73,31 @@ body{
   background: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
+}
+
+.menu-toggle{ display:none; }
+nav{ display:flex; }
+
+@media (max-width:768px){
+  .menu-toggle{ display:block; }
+
+  nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:var(--footer-gradient);
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transform:translateX(100%);
+    transition:0.4s;
+  }
+
+  nav.show{
+    transform:translateX(0);
+  }
 }
 
 /* ================= NAV ================= */
