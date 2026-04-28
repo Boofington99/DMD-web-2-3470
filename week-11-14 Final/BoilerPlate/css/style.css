@@ -4,6 +4,8 @@
   --color-accent: #79f8f8;
   --color-background: #ffffff;
   --color-text: #222222;
+  --primary-color: #BD32D3;
+  --secondary-color: #6989fd;
   --font-family-base: 'Poppins', sans-serif;
 }
 
@@ -16,6 +18,7 @@
 
 html, body{
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -25,15 +28,14 @@ body{
   line-height: 1.6;
 }
 
-/* ================= NAV + HERO BACKGROUND ================= */
+/* ================= NAV + HERO ================= */
 .nav,
-#home {
+#home{
   background: var(--footer-gradient);
   color: white;
 }
 
-/* ================= NAV ================= */
-.nav {
+.nav{
   padding: 18px 50px;
 }
 
@@ -45,7 +47,7 @@ body{
 }
 
 nav a{
-  color: #fff;
+  color: white;
   text-decoration: none;
   padding: 8px 12px;
   transition: 0.3s;
@@ -56,7 +58,7 @@ nav a:hover{
 }
 
 /* ================= HERO ================= */
-.container2 {
+.container2{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -67,7 +69,7 @@ nav a:hover{
   padding: 90px 60px 70px;
 }
 
-.hero-text {
+.hero-text{
   grid-area: hero-text;
 }
 
@@ -78,61 +80,32 @@ nav a:hover{
 }
 
 .hero-text p{
-  margin-bottom: 16px;
   color: #f1f1f1;
+  margin-bottom: 16px;
 }
 
-.hero-btn {
+.hero-btn{
   grid-area: hero-btn;
-  margin-top: 10px;
-}
-
-.hero-img {
-  grid-area: hero-img;
-  text-align: center;
-}
-
-.hero-img img{
-  max-width: 85%;
-  display: block;
-  margin: 0 auto;
 }
 
 /* ================= BUTTONS ================= */
-button {
-  background-color: white;
+button{
+  background: white;
   color: #6a3df4;
   border: none;
   padding: 0.85em 2em;
   font-weight: 600;
   border-radius: 18px;
   font-size: 1rem;
+  cursor: pointer;
   box-shadow: 0 5px 12px rgba(0,0,0,0.12);
   transition: 0.3s;
   margin-right: 10px;
-  cursor: pointer;
 }
 
-button:hover {
+button:hover{
   background: var(--color-gradient);
   color: white;
-}
-
-/* Optional button variants */
-.primary-btn{
-  background: white;
-  color: #6a3df4;
-}
-
-.secondary-btn{
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-}
-
-.secondary-btn:hover{
-  background: white;
-  color: #6a3df4;
 }
 
 /* ================= SECTIONS ================= */
@@ -145,15 +118,6 @@ section{
   text-align: center;
 }
 
-.features h2{
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.features p{
-  color: #666;
-}
-
 .features-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -162,7 +126,7 @@ section{
 }
 
 .feature-card{
-  background: #fff;
+  background: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
@@ -173,20 +137,52 @@ section{
   transform: translateY(-5px);
 }
 
-/* ================= HOW IT WORKS ================= */
+/* ================= WORK ================= */
 .work-items{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  margin-top: 30px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .work-items div{
-  background: #fff;
+  background: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* ================= MANAGE + RESPONSIVE (old sections restored) ================= */
+.manage-section,
+.responsive-section{
+  padding: 80px 60px;
+}
+
+.flex-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.read-btn{
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ================= TUTORIAL ================= */
+.tutorial{
+  position: relative;
+  text-align: center;
+  padding: 120px 20px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.tutorial h1{
+  font-size: 3rem;
 }
 
 /* ================= PRICING ================= */
@@ -194,15 +190,14 @@ section{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  margin-top: 30px;
 }
 
 .pricing div{
-  background: #fff;
+  background: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
@@ -210,26 +205,19 @@ section{
   transform: translateY(-6px);
 }
 
-/* ================= USER REVIEW ================= */
+/* ================= REVIEW ================= */
 .reviews{
   text-align: center;
-  padding: 80px 20px;
-}
-
-.review-title{
-  font-size: 2.5rem;
-  margin-bottom: 60px;
-  color: #1f2a66;
 }
 
 .review-card{
   position: relative;
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
   padding: 80px 40px 40px;
-  border: 2px solid #b56bff;
   border-radius: 20px;
-  background: #fff;
+  background: white;
+  border: 2px solid #b56bff;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
@@ -241,27 +229,8 @@ section{
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 3px solid #b56bff;
-  background: white;
   overflow: hidden;
-}
-
-.review-avatar img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.review-text{
-  font-size: 1rem;
-  color: #2b3a67;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-
-.review-name{
-  font-weight: 600;
-  color: #2b3a67;
+  border: 3px solid #b56bff;
 }
 
 /* ================= FOOTER ================= */
@@ -270,12 +239,37 @@ section{
   color: white;
   text-align: center;
   padding: 50px 20px;
-  margin-top: 60px;
 }
 
 /* ================= UTIL ================= */
-.accent-text {
+.accent-text{
   color: var(--color-accent);
+}
+
+/* ================= SCROLL BUTTON ================= */
+.scroll-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.scroll-to-top.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover{
+  transform: scale(1.1);
 }
 
 /* ================= MOBILE ================= */
@@ -291,26 +285,13 @@ section{
     padding: 50px 20px;
   }
 
-  section{
-    padding: 50px 20px;
-  }
-
-  .nav{
-    padding: 18px 20px;
-  }
-
-  .nav-container{
+  .flex-container{
     flex-direction: column;
-    gap: 10px;
   }
 
   .features-grid,
   .work-items,
   .pricing{
     grid-template-columns: 1fr;
-  }
-
-  .hero-img img{
-    max-width: 100%;
   }
 }
