@@ -206,14 +206,20 @@ section{
   background: white;
   padding: 25px;
   border-radius: 12px;
+
+  border: 2px solid transparent; /* prevents shifting */
+
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .feature-card:hover{
-  transform: translateY(-5px);
-}
+  transform: translateY(-5px); /* same as your original */
 
+  border: 2px solid #BD32D3;
+
+  box-shadow: 0 15px 30px rgba(189, 50, 211, 0.25);
+}
 /* ================= HOW IT WORKS (FIXED) ================= */
 .work-section h2{
   text-align: center;
@@ -230,8 +236,21 @@ section{
   background: white;
   padding: 25px;
   border-radius: 12px;
+
+  border: 2px solid transparent; /* prevents layout shift */
+
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   text-align: center;
+
+  transition: all 0.3s ease;
+}
+
+.step:hover{
+  transform: translateY(-5px); /* does NOT affect grid layout */
+
+  border: 2px solid #BD32D3;
+
+  box-shadow: 0 15px 30px rgba(189, 50, 211, 0.25);
 }
 
 /* ================= MANAGE SECTION ================= */
@@ -329,35 +348,11 @@ section{
 /* ================= MOBILE ================= */
 @media (max-width: 768px){
 
-  .container2{
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "hero-text"
-      "hero-img"
-      "hero-btn";
-    text-align: center;
-    padding: 50px 20px;
-  }
-
-  .features-grid,
-  .steps,
-  .pricing-cards{
-    grid-template-columns: 1fr;
-  }
-
-  .flex-container{
-    flex-direction: column;
-  }
-}
-/* ================= MOBILE FIRST FIX (TOP-DOWN FLOW) ================= */
-@media (max-width: 768px){
-
-  /* Force everything to stack */
   section{
     padding: 50px 20px;
   }
 
-  /* HERO becomes fully vertical */
+  /* HERO */
   .container2{
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -376,7 +371,7 @@ section{
     max-width: 100%;
   }
 
-  /* NAV stacks vertically */
+  /* NAV */
   .nav-container{
     flex-direction: column;
     gap: 10px;
@@ -388,28 +383,21 @@ section{
     padding: 10px 0;
   }
 
-  /* FEATURES stack */
-  .features-grid{
+  /* GRIDS */
+  .features-grid,
+  .steps,
+  .pricing-cards{
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  /* HOW IT WORKS stack */
-  .work-items{
-    grid-template-columns: 1fr;
-  }
-
-  /* PRICING stack */
-  .pricing{
-    grid-template-columns: 1fr;
-  }
-
-  /* MANAGE section stacks */
+  /* FLEX SECTIONS */
   .flex-container{
     flex-direction: column;
     text-align: center;
   }
 
-  /* Buttons full width optional feel */
+  /* OPTIONAL BUTTON FIX */
   button{
     width: 100%;
     margin-bottom: 10px;
