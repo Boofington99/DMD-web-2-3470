@@ -10,3 +10,24 @@ document.querySelectorAll("#navMenu a").forEach(link => {
     navMenu.classList.remove("show");
   });
 });
+
+
+// Back to Top Button
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+// Show button after scrolling past first section
+window.addEventListener("scroll", () => {
+  if (window.scrollY > window.innerHeight * 0.5) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+// Scroll to top on click
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

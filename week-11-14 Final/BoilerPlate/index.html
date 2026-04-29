@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My App Website</title>
 
   <!-- CSS -->
@@ -180,10 +180,12 @@
     <p>© 2026 My App. All rights reserved.</p>
   </footer>
 
-  <!-- SCROLL BUTTON -->
-  <button id="backToTopBtn">^</button>
+  <!-- ================= BACK TO TOP BUTTON ================= -->
+  <button id="backToTopBtn" aria-label="Back to top">
+    ↑
+  </button>
 
-  <!-- ================= MENU SCRIPT ================= -->
+  <!-- ================= SCRIPTS ================= -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
@@ -192,10 +194,27 @@
       navMenu.classList.toggle("show");
     });
 
-    // auto-close on click
     document.querySelectorAll("#navMenu a").forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("show");
+      });
+    });
+
+    // BACK TO TOP BUTTON
+    const btn = document.getElementById("backToTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight * 0.5) {
+        btn.classList.add("show");
+      } else {
+        btn.classList.remove("show");
+      }
+    });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
       });
     });
   </script>
