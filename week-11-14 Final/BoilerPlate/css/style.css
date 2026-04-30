@@ -65,16 +65,26 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* ================= HERO (PRESERVED) ================= */
+/* ================= HERO (UPDATED) ================= */
 .hero {
   background: var(--footer-gradient);
   color: white;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 30px;
+  align-items: start; /* Aligns content to the top */
+  
+  justify-content: center;
+
+  gap: 40px;
   padding: 90px 60px;
   min-height: 80vh;
+}
+
+.hero-text {
+  /* ADJUST THESE TWO VALUES TO NUDGE THE TEXT */
+  margin-top: 50px;     /* Moves text DOWN from the top */
+  padding-left: 40px;   /* Moves text RIGHT towards the center */
 }
 
 .hero-text h1 {
@@ -189,6 +199,21 @@ section {
 
 .step {
   text-align: center;
+  padding: 30px;
+  background: white;
+
+  border-left: 2px solid rgba(189, 50, 211, 0.25);
+  border-right: 2px solid rgba(189, 50, 211, 0.25);
+  border-bottom: 2px solid rgba(189, 50, 211, 0.25);
+  border-top: none;
+
+  border-radius: 0 0 15px 15px;
+
+  transition: 0.3s ease;
+}
+.step:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
 }
 
 .step-number {
@@ -283,11 +308,6 @@ section {
   filter: brightness(0.9);
 }
 
-/* Hover effect (darkens the button) */
-.btn-start:hover {
-  filter: brightness(0.8);
-}
-
 /* ================= REVIEWS & FOOTER ================= */
 .review-card {
   max-width: 800px;
@@ -317,7 +337,7 @@ section {
   color: white;
   border: none;
 
-  border-radius: 12px; /* rounded corners */
+  border-radius: 12px;
 
   display: flex;
   align-items: center;
@@ -345,6 +365,11 @@ section {
     padding: 60px 20px;
   }
   
+  .hero-text {
+    padding-left: 0; /* Reset nudge on mobile */
+    margin-top: 0;
+  }
+
   .features-grid, .steps, .pricing-cards {
     grid-template-columns: 1fr;
   }
@@ -358,6 +383,6 @@ section {
   }
 
   #navMenu {
-    display: none; /* Add JS to toggle this */
+    display: none; 
   }
 }
