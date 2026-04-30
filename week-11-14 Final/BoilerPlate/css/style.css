@@ -28,7 +28,7 @@ html, body {
   line-height: 1.6;
 }
 
-/* ================= NAV (PRESERVED) ================= */
+/* ================= NAV ================= */
 .nav {
   background: var(--footer-gradient);
   color: white;
@@ -65,26 +65,23 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* ================= HERO (UPDATED) ================= */
+/* ================= HERO (UPDATED ALIGNMENT) ================= */
 .hero {
   background: var(--footer-gradient);
   color: white;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: start; /* Aligns content to the top */
-  
-  justify-content: center;
-
+  align-items: start;     /* Keeps text at the top */
+  justify-items: end;     /* Pushes the text column toward the center */
   gap: 40px;
   padding: 90px 60px;
   min-height: 80vh;
 }
 
 .hero-text {
-  /* ADJUST THESE TWO VALUES TO NUDGE THE TEXT */
-  margin-top: 50px;     /* Moves text DOWN from the top */
-  padding-left: 40px;   /* Moves text RIGHT towards the center */
+  max-width: 500px;       /* Keeps text from spreading too wide */
+  margin-top: 60px;       /* Move down slightly from very top */
+  padding-right: 20px;    /* Nudges text to the right towards center */
 }
 
 .hero-text h1 {
@@ -100,6 +97,10 @@ nav a:hover {
 
 .accent-text {
   color: var(--color-accent);
+}
+
+.hero-img {
+  justify-self: start;    /* Keeps phone image toward the center */
 }
 
 .hero-img img {
@@ -191,6 +192,13 @@ section {
 }
 
 /* ================= HOW IT WORKS ================= */
+/* ================= HOW IT WORKS UPDATES ================= */
+.work-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--navy-blue);
+  margin-bottom: 20px;
+}
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -201,29 +209,19 @@ section {
   text-align: center;
   padding: 30px;
   background: white;
-
   border-left: 2px solid rgba(189, 50, 211, 0.25);
   border-right: 2px solid rgba(189, 50, 211, 0.25);
   border-bottom: 2px solid rgba(189, 50, 211, 0.25);
-  border-top: none;
-
   border-radius: 0 0 15px 15px;
-
   transition: 0.3s ease;
 }
+
 .step:hover {
   border-color: var(--primary-color);
   transform: translateY(-5px);
 }
 
-.step-number {
-  font-size: 3rem;
-  font-weight: 800;
-  color: rgba(189, 50, 211, 0.1);
-  margin-bottom: -20px;
-}
-
-/* ================= MANAGE SECTION (SIDE-BY-SIDE FIX) ================= */
+/* ================= MANAGE SECTION ================= */
 .manage-section .flex-container {
   display: flex;
   align-items: center;
@@ -233,14 +231,8 @@ section {
   margin: 0 auto;
 }
 
-.manage-text {
+.manage-text, .manage-img {
   flex: 1;
-}
-
-.manage-img {
-  flex: 1;
-  display: flex;
-  justify-content: center;
 }
 
 .manage-img img {
@@ -280,15 +272,6 @@ section {
   margin: 25px 0;
 }
 
-.features-list li {
-  padding: 8px 0;
-  color: #ccc;
-}
-
-.features-list li.included {
-  color: var(--navy-blue);
-}
-
 .btn-start {
   width: 100%;
   padding: 12px;
@@ -301,11 +284,9 @@ section {
   transition: 0.3s ease;
 }
 
-/* Hover state (fills + darkens slightly) */
 .btn-start:hover {
   background: var(--primary-color);
   color: white;
-  filter: brightness(0.9);
 }
 
 /* ================= REVIEWS & FOOTER ================= */
@@ -315,7 +296,6 @@ section {
   padding: 40px;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   text-align: center;
 }
 
@@ -335,16 +315,11 @@ section {
   height: 50px;
   background: var(--primary-color);
   color: white;
-  border: none;
-
   border-radius: 12px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 20px;
-
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
@@ -356,18 +331,43 @@ section {
   visibility: visible;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= MOBILE RESPONSIVE (INCLUDES DROPDOWN FIX) ================= */
 @media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  #navMenu {
+    display: none; /* Hidden on mobile by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #9333ea; /* Solid purple for menu */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+
+  /* This is what your JS toggles */
+  #navMenu.active {
+    display: flex;
+  }
+
+  #navMenu a {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
   .hero, .manage-section .flex-container {
     grid-template-columns: 1fr;
-    flex-direction: column;
     text-align: center;
-    padding: 60px 20px;
   }
   
   .hero-text {
-    padding-left: 0; /* Reset nudge on mobile */
-    margin-top: 0;
+    margin: 0 auto;
+    padding-right: 0;
   }
 
   .features-grid, .steps, .pricing-cards {
@@ -376,13 +376,5 @@ section {
 
   .nav-container {
     padding: 0 20px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  #navMenu {
-    display: none; 
   }
 }
