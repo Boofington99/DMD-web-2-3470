@@ -11,7 +11,7 @@
   --font-family-base: 'Poppins', sans-serif;
 }
 
-/* ================= BASE STYLES ================= */
+/* ================= BASE ================= */
 * {
   margin: 0;
   padding: 0;
@@ -65,23 +65,21 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* ================= HERO (UPDATED ALIGNMENT) ================= */
+/* ================= HERO (FIXED) ================= */
 .hero {
   background: var(--footer-gradient);
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: start;     /* Keeps text at the top */
-  justify-items: end;     /* Pushes the text column toward the center */
+  align-items: center;
   gap: 40px;
   padding: 90px 60px;
   min-height: 80vh;
 }
 
 .hero-text {
-  max-width: 500px;       /* Keeps text from spreading too wide */
-  margin-top: 60px;       /* Move down slightly from very top */
-  padding-right: 20px;    /* Nudges text to the right towards center */
+  max-width: 500px;
+  text-align: left;
 }
 
 .hero-text h1 {
@@ -100,12 +98,14 @@ nav a:hover {
 }
 
 .hero-img {
-  justify-self: start;    /* Keeps phone image toward the center */
+  justify-self: end;
 }
 
 .hero-img img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
+  display: block;
   filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
 }
 
@@ -138,16 +138,12 @@ button, .primary-btn, .secondary-btn, .read-btn {
   margin-top: 20px;
 }
 
-.primary-btn:hover, .read-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* ================= SECTIONS GENERAL ================= */
+/* ================= SECTIONS ================= */
 section {
   padding: 80px 60px;
 }
 
+/* ================= FEATURES ================= */
 .features-header {
   text-align: center;
   max-width: 800px;
@@ -164,7 +160,6 @@ section {
   color: #666;
 }
 
-/* ================= FEATURES GRID ================= */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -185,20 +180,30 @@ section {
   transform: translateY(-10px);
   border-color: var(--primary-color);
 }
-
-.feature-icon {
-  font-size: 40px;
-  margin-bottom: 20px;
+/* ================= FEATURES TOP (FIX) ================= */
+.features-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
 }
 
+.features-image img {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+  margin: 0 auto;
+}
 /* ================= HOW IT WORKS ================= */
-/* ================= HOW IT WORKS UPDATES ================= */
 .work-section h2 {
   text-align: center;
   font-size: 2.5rem;
   color: var(--navy-blue);
   margin-bottom: 20px;
 }
+
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -209,11 +214,9 @@ section {
   text-align: center;
   padding: 30px;
   background: white;
-  border-left: 2px solid rgba(189, 50, 211, 0.25);
-  border-right: 2px solid rgba(189, 50, 211, 0.25);
-  border-bottom: 2px solid rgba(189, 50, 211, 0.25);
   border-radius: 0 0 15px 15px;
-  transition: 0.3s ease;
+  border: 2px solid rgba(189, 50, 211, 0.25);
+  transition: 0.3s;
 }
 
 .step:hover {
@@ -221,7 +224,7 @@ section {
   transform: translateY(-5px);
 }
 
-/* ================= MANAGE SECTION ================= */
+/* ================= MANAGE ================= */
 .manage-section .flex-container {
   display: flex;
   align-items: center;
@@ -231,19 +234,12 @@ section {
   margin: 0 auto;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .manage-section .flex-container {
-    display: block; /* disables flex */
-  }
-}
-
 .manage-text, .manage-img {
   flex: 1;
 }
 
 .manage-img img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -267,36 +263,7 @@ section {
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.plan-price {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--navy-blue);
-}
-
-.features-list {
-  list-style: none;
-  text-align: left;
-  margin: 25px 0;
-}
-
-.btn-start {
-  width: 100%;
-  padding: 12px;
-  background: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-start:hover {
-  background: var(--primary-color);
-  color: white;
-}
-
-/* ================= REVIEWS & FOOTER ================= */
+/* ================= REVIEWS ================= */
 .review-card {
   max-width: 800px;
   margin: 0 auto;
@@ -306,6 +273,7 @@ section {
   text-align: center;
 }
 
+/* ================= FOOTER ================= */
 .footer {
   background: var(--footer-gradient);
   color: white;
@@ -338,50 +306,72 @@ section {
   visibility: visible;
 }
 
-/* ================= MOBILE RESPONSIVE (INCLUDES DROPDOWN FIX) ================= */
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+.features-top {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.features-image img {
+  max-width: 100%;
+}
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-img {
+    justify-self: center;
+  }
+
+  .manage-section .flex-container {
+    display: block;
+    text-align: center;
+  }
+
+  .features-grid,
+  .steps,
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= NAV MOBILE ================= */
 @media (max-width: 992px) {
+
   .menu-toggle {
     display: block;
+    z-index: 1100;
   }
 
   #navMenu {
-    display: none; /* Hidden on mobile by default */
-    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: #9333ea; /* Solid purple for menu */
-    padding: 20px;
+    background: #9333ea;
+
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
 
-  /* This is what your JS toggles */
-  #navMenu.active {
-    display: flex;
+  #navMenu.show {
+    max-height: 400px;
   }
 
   #navMenu a {
     padding: 15px 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .hero, .manage-section .flex-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .hero-text {
-    margin: 0 auto;
-    padding-right: 0;
-  }
-
-  .features-grid, .steps, .pricing-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-container {
-    padding: 0 20px;
   }
 }

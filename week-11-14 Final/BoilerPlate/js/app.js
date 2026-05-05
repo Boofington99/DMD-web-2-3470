@@ -31,3 +31,5 @@ backToTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+navMenu.classList.toggle("show");
