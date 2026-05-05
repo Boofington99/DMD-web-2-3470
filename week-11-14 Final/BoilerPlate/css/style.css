@@ -429,3 +429,15 @@ section {
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 }
+
+/* ================= SECTION HEADINGS FIX ================= */
+.pricing-section .features-header,
+.reviews .features-header {
+  text-align: center;
+  margin: 0 auto 50px;
+}
+
+.pricing-section .features-header h2,
+.reviews .features-header h2 {
+  text-align: center;
+}
