@@ -145,7 +145,7 @@ section {
 /* ================= FEATURES ================= */
 .features-header {
   flex: 1;
-  text-align: left;
+  text-align: center;
   max-width: 600px;
   margin: 0;
 }
@@ -214,7 +214,7 @@ section {
 }
 .features-header {
   flex: 1;
-  text-align: left;
+  text-align: center;
   max-width: 600px;
   margin: 0;
 }
