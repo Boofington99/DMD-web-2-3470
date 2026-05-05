@@ -65,7 +65,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* ================= HERO (FIXED) ================= */
+/* ================= HERO ================= */
 .hero {
   background: var(--footer-gradient);
   color: white;
@@ -104,7 +104,6 @@ nav a:hover {
 .hero-img img {
   width: 100%;
   max-width: 500px;
-  height: auto;
   display: block;
   filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
 }
@@ -145,9 +144,9 @@ section {
 
 /* ================= FEATURES ================= */
 .features-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 50px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0;
 }
 
 .features-header h2 {
@@ -160,6 +159,35 @@ section {
   color: #666;
 }
 
+/* ================= FEATURES TOP (FIXED) ================= */
+.features-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+.features-header {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+  margin: 0;
+}
+
+.features-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.features-image img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* ================= FEATURES GRID ================= */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -180,22 +208,7 @@ section {
   transform: translateY(-10px);
   border-color: var(--primary-color);
 }
-/* ================= FEATURES TOP (FIX) ================= */
-.features-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto 50px;
-}
 
-.features-image img {
-  width: 100%;
-  max-width: 450px;
-  display: block;
-  margin: 0 auto;
-}
 /* ================= HOW IT WORKS ================= */
 .work-section h2 {
   text-align: center;
@@ -240,7 +253,6 @@ section {
 
 .manage-img img {
   width: 100%;
-  height: auto;
 }
 
 /* ================= PRICING ================= */
@@ -306,16 +318,14 @@ section {
   visibility: visible;
 }
 
-/* ================= MOBILE FIX ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-.features-top {
-  grid-template-columns: 1fr;
-  text-align: center;
-}
 
-.features-image img {
-  max-width: 100%;
-}
+  .features-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
