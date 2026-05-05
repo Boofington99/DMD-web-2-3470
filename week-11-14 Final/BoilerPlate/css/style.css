@@ -144,6 +144,7 @@ section {
 
 /* ================= FEATURES ================= */
 .features-header {
+  flex: 1;
   text-align: left;
   max-width: 600px;
   margin: 0;
@@ -159,6 +160,49 @@ section {
   color: #666;
 }
 
+/* ================= FEATURES TOP (FIXED) ================= */
+.features-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.features-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.features-image img {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+}
+
+/* ================= FEATURES GRID ================= */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.feature-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  border: 1px solid #eee;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+}
 /* ================= FEATURES TOP (FIXED) ================= */
 .features-top {
   display: flex;
